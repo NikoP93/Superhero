@@ -5,13 +5,14 @@ public class Main {
 
         final int CREATE_HERO= 1;
         final int EXIT_PROGRAM= 9;
+        int choice;
 
         System.out.println("Welcome to superhero universe");
 
-        Database database = new Database();
 
+        Database database = new Database();
         Scanner keyboard = new Scanner(System.in);
-        int choice;
+
         do {
             System.out.println("1. Create Hero");
             System.out.println("9. Exit program");
@@ -37,13 +38,11 @@ public class Main {
                 Superhero hero = new Superhero(name, realName, superPower, yearCreated, isHuman, strenght);
                 database.addSuperhero(hero);
 
-                System.out.println("new hero created: " + hero);
-
+                System.out.println("New hero created: " + hero);
 
             }
         } while(choice != EXIT_PROGRAM);
         System.out.println("See you next time");
     }
-
 
 }
