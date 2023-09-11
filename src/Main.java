@@ -9,7 +9,6 @@ public class Main {
 
         System.out.println("Welcome to superhero universe");
 
-
         Database database = new Database();
         Scanner keyboard = new Scanner(System.in);
 
@@ -17,7 +16,6 @@ public class Main {
             System.out.println("1. Create Hero");
             System.out.println("9. Exit program");
             choice = keyboard.nextInt();
-
 
             if (choice == CREATE_HERO) {
 

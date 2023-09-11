@@ -1,3 +1,5 @@
+
+//Attributes
 public class Superhero {
     private String name;
     private String realName;
@@ -6,6 +8,7 @@ public class Superhero {
     private String isHuman;
     private String strenght;
 
+    //konstruktør
     public Superhero (String name, String realName,
                       String superPower, int yearCreated, String isHuman, String strenght)
     {
@@ -17,6 +20,7 @@ public class Superhero {
         this.strenght=strenght;
     }
 
+    //get metoder
     public String getName(){
         return name;
     }
@@ -42,7 +46,7 @@ public class Superhero {
 
 
 
-
+    //to String
     @Override
     public String toString() {
         return "Superhero: " + " " + name + ", " + realName + ", " + superPower + " ," + yearCreated  + ", " + isHuman + " ," + strenght;
