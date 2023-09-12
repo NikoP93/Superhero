@@ -1,18 +1,22 @@
+import java.util.ArrayList;
+
 public class Database {
 
     //Array
-    private Superhero[] superherolist;
-    int count =0;
+    private ArrayList<Superhero> superherolist;
+    //int count;
 
     //array
     public Database(){
-        this.superherolist = new Superhero[5];
+        this.superherolist = new ArrayList<>();
     }
+
 
     //metode til at adde til array
     public void addSuperhero(Superhero superhero){
-        superherolist[count] = superhero;
-        count = count +1;
+        //superherolist[count] = superhero;
+        //count = count +1;
+        superherolist.add(superhero);
     }
 
 

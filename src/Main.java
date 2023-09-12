@@ -17,21 +17,24 @@ public class Main {
             System.out.println("9. Exit program");
             choice = keyboard.nextInt();
 
+            keyboard.nextLine(); //clearer scanneren
+
             if (choice == CREATE_HERO) {
 
                 System.out.println("Create your hero:\n");
                 System.out.println("Your Superhero name?");
-                String name = keyboard.next();
+                String name = keyboard.nextLine();
                 System.out.println("Your real name?");
-                String realName = keyboard.next();
+                String realName = keyboard.nextLine();
                 System.out.println("Your superpower?");
-                String superPower = keyboard.next();
+                String superPower = keyboard.nextLine();
                 System.out.println("What year did you get created?");
                 int yearCreated = keyboard.nextInt();
+                keyboard.nextLine();
                 System.out.println("Is your superhero human?");
-                String isHuman = keyboard.next();
+                String isHuman = keyboard.nextLine();
                 System.out.println("What is your superhero strenght?");
-                String strenght = keyboard.next();
+                String strenght = keyboard.nextLine();
 
                 Superhero hero = new Superhero(name, realName, superPower, yearCreated, isHuman, strenght);
                 database.addSuperhero(hero);
