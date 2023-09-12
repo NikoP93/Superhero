@@ -3,8 +3,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        final int CREATE_HERO= 1;
-        final int EXIT_PROGRAM= 9;
+        final int CREATE_HERO = 1;
+        final int EXIT_PROGRAM = 9;
+        final int SUPERHERO_LIST = 4;
         int choice;
 
         System.out.println("Welcome to superhero universe");
@@ -13,7 +14,9 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
 
         do {
+            System.out.println("\nMake your choice sir");
             System.out.println("1. Create Hero");
+            System.out.println("4. Print Superhero list");
             System.out.println("9. Exit program");
             choice = keyboard.nextInt();
 
@@ -39,10 +42,13 @@ public class Main {
                 Superhero hero = new Superhero(name, realName, superPower, yearCreated, isHuman, strenght);
                 database.addSuperhero(hero);
 
-                System.out.println("New hero created: " + hero);
+                System.out.println("New hero created:\n " + hero);
 
+            } else if (choice == SUPERHERO_LIST) {
+                System.out.println(database.getSuperherolist());
             }
-        } while(choice != EXIT_PROGRAM);
+
+        } while (choice != EXIT_PROGRAM);
         System.out.println("See you next time");
     }
 

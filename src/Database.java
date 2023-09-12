@@ -7,13 +7,16 @@ public class Database {
     //int count;
 
     //array
-    public Database(){
+    public Database() {
         this.superherolist = new ArrayList<>();
     }
 
+    public ArrayList<Superhero> getSuperherolist() {
+        return superherolist;
+    }
 
     //metode til at adde til array
-    public void addSuperhero(Superhero superhero){
+    public void addSuperhero(Superhero superhero) {
         //superherolist[count] = superhero;
         //count = count +1;
         superherolist.add(superhero);

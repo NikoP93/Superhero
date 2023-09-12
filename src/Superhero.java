@@ -9,47 +9,49 @@ public class Superhero {
     private String strenght;
 
     //konstruktør
-    public Superhero (String name, String realName,
-                      String superPower, int yearCreated, String isHuman, String strenght)
-    {
-        this.name=name;
-        this.realName=realName;
-        this.superPower=superPower;
-        this.yearCreated=yearCreated;
-        this.isHuman=isHuman;
-        this.strenght=strenght;
+    public Superhero(String name, String realName,
+                     String superPower, int yearCreated, String isHuman, String strenght) {
+        this.name = name;
+        this.realName = realName;
+        this.superPower = superPower;
+        this.yearCreated = yearCreated;
+        this.isHuman = isHuman;
+        this.strenght = strenght;
     }
 
     //get metoder
-    public String getName(){
+    public String getName() {
         return name;
     }
-    public String getRealName(){
+
+    public String getRealName() {
         return realName;
     }
 
-    public String getSuperPower(){
+    public String getSuperPower() {
         return superPower;
     }
 
-    public int getYearCreated(){
+    public int getYearCreated() {
         return yearCreated;
     }
 
-    public String getIshuman(){
+    public String getIshuman() {
         return isHuman;
     }
 
-    public String getStrenght(){
+    public String getStrenght() {
         return strenght;
     }
 
-
-
-    //to String
     @Override
     public String toString() {
-        return "Superhero: " + " " + name + ", " + realName + ", " + superPower + " ," + yearCreated  + ", " + isHuman + " ," + strenght;
+        return "\nSuperhero name: " + name +
+                "\nReal name: " + realName +
+                "\nSuper power: " + superPower +
+                " \nYear created: " + yearCreated +
+                " \nIs human: " + isHuman +
+                " \nStrenght: " + strenght;
     }
 }
 
