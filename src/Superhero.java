@@ -36,7 +36,7 @@ public class Superhero {
         return yearCreated;
     }
 
-    public String getIshuman() {
+    public String getIsHuman() {
         return isHuman;
     }
 

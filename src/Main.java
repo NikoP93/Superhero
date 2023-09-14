@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -46,14 +47,22 @@ public class Main {
 
                 System.out.println("New hero created:\n " + hero);
 
-            }
-            else if (choice == SUPERHERO_LIST) {
+            } else if (choice == SUPERHERO_LIST) {
                 System.out.println(database.getSuperherolist());
-            }
 
-            else if (choice == SEARCH_SUPERHERO){
+
+            } else if (choice == SEARCH_SUPERHERO) {
                 System.out.println("What superhero do you wanna search for?");
-                System.out.println(database.findSuperhero(keyboard.nextLine()));
+                String searchTerm = keyboard.nextLine();
+                Superhero matchingSuperheroes = database.findSuperhero(searchTerm);
+
+                if (matchingSuperheroes != null) {
+                    System.out.println("Matching Superhero:\n" + matchingSuperheroes);
+                } else {
+                    System.out.println(" No matching superhero, sadge");
+
+                }
+
             }
 
         } while (choice != EXIT_PROGRAM);
