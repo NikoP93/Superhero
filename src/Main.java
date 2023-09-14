@@ -6,6 +6,7 @@ public class Main {
         final int CREATE_HERO = 1;
         final int EXIT_PROGRAM = 9;
         final int SUPERHERO_LIST = 4;
+        final int SEARCH_SUPERHERO = 7;
         int choice;
 
         System.out.println("Welcome to superhero universe");
@@ -15,8 +16,9 @@ public class Main {
 
         do {
             System.out.println("\nMake your choice sir");
-            System.out.println("1. Create Hero");
-            System.out.println("4. Print Superhero list");
+            System.out.println("1. Create a Superhero");
+            System.out.println("4. Print superhero list");
+            System.out.println("7. Search for a superhero");
             System.out.println("9. Exit program");
             choice = keyboard.nextInt();
 
@@ -44,8 +46,14 @@ public class Main {
 
                 System.out.println("New hero created:\n " + hero);
 
-            } else if (choice == SUPERHERO_LIST) {
+            }
+            else if (choice == SUPERHERO_LIST) {
                 System.out.println(database.getSuperherolist());
+            }
+
+            else if (choice == SEARCH_SUPERHERO){
+                System.out.println("What superhero do you wanna search for?");
+                System.out.println(database.findSuperhero(keyboard.nextLine()));
             }
 
         } while (choice != EXIT_PROGRAM);
