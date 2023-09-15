@@ -4,6 +4,31 @@ public class Superhero {
     private String name;
     private String realName;
     private String superPower;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setRealName(String realName) {
+        this.realName = realName;
+    }
+
+    public void setSuperPower(String superPower) {
+        this.superPower = superPower;
+    }
+
+    public void setYearCreated(int yearCreated) {
+        this.yearCreated = yearCreated;
+    }
+
+    public void setIsHuman(String isHuman) {
+        this.isHuman = isHuman;
+    }
+
+    public void setStrenght(String strenght) {
+        this.strenght = strenght;
+    }
+
     private int yearCreated;
     private String isHuman;
     private String strenght;
@@ -43,6 +68,8 @@ public class Superhero {
     public String getStrenght() {
         return strenght;
     }
+
+
 
     @Override
     public String toString() {

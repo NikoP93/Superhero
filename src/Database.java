@@ -21,16 +21,23 @@ public class Database {
         superherolist.add(superhero);
     }
 
-    public Superhero findSuperhero(String searchTerm){
-        searchTerm = searchTerm.toLowerCase();
-
+    public Superhero findSuperhero(String superheroName){
         for (Superhero hero : superherolist) {
-            String heroName = hero.getName().toLowerCase();
-            if (heroName.equals(searchTerm) || heroName.startsWith(searchTerm))
+            if (hero.getName().contains(superheroName))
                 return hero;
         }
 
         return null;
+    }
+
+    public ArrayList<Superhero> findSuperheroes(String superheroName){
+        ArrayList<Superhero> superheroes = new ArrayList<>();
+        for (Superhero superhero : superherolist) {
+            if (superhero.getName().contains(superheroName)){
+                superheroes.add(superhero);
+            }
+        }
+        return superheroes;
     }
 
 
