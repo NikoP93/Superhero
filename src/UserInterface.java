@@ -4,8 +4,6 @@ import java.util.Scanner;
 public class UserInterface {
 
     public void StartProgram() {
-        System.out.println("Start program");
-
 
         final int CREATE_HERO = 1;
         final int SUPERHERO_LIST = 4;
@@ -65,9 +63,7 @@ public class UserInterface {
                     System.out.println(" No matching superhero, sadge");
                 }
 
-            }
-
-            else if (choice == EDIT_SUPERHERO){
+            } else if (choice == EDIT_SUPERHERO) {
                 System.out.println("What superhero do you wanna edit?");
                 String brugerInput = keyboard.nextLine();
 
@@ -76,67 +72,66 @@ public class UserInterface {
                 Superhero superheroDerSkalRedigeres = null;
 
                 //søgning finder ingen personer
-                if (søgeResultat.size()==0){
+                if (søgeResultat.size() == 0) {
                     System.out.println("No superheroes found");
-                }
-                else if (søgeResultat.size()>1){
+                } else if (søgeResultat.size() > 1) {
                     //vælg en superhelt i søgeresultatet med flere personer
                     System.out.println("Choose a superhero");
                     int count = 1;
                     for (Superhero superhero : søgeResultat) {
-                        System.out.println(count++ +"." + " "+
-                                superhero.getName() + " " + " "+
-                                superhero.getRealName() + " " + " "+
-                                superhero.getSuperPower() + " " + " "+
-                                superhero.getYearCreated()  + " " + " "+
-                                superhero.getIsHuman() + " " + " "+
+                        System.out.println(count++ + "." + " " +
+                                superhero.getName() + " " + " " +
+                                superhero.getRealName() + " " + " " +
+                                superhero.getSuperPower() + " " + " " +
+                                superhero.getYearCreated() + " " + " " +
+                                superhero.getIsHuman() + " " + " " +
                                 superhero.getStrenght());
                     }
 
                     int superheroValg = keyboard.nextInt();
                     keyboard.nextLine(); //clearer scanner
-                    superheroDerSkalRedigeres = søgeResultat.get(superheroValg-1);
+                    superheroDerSkalRedigeres = søgeResultat.get(superheroValg - 1);
                 }
                 //søgning finder 1 person
                 else {
-                    superheroDerSkalRedigeres =søgeResultat.get(0);
+                    superheroDerSkalRedigeres = søgeResultat.get(0);
                 }
                 //Redigering af valgte personer
 
-                if(superheroDerSkalRedigeres != null){
+                if (superheroDerSkalRedigeres != null) {
                     System.out.println("Edit superhero stats. Press Enter if the stats do not need to get changed");
                     String nyVærdi;
                     System.out.println("Superhero name: " + superheroDerSkalRedigeres.getName());
-                    nyVærdi=keyboard.nextLine();
-                    if (!nyVærdi.isEmpty()){
+                    nyVærdi = keyboard.nextLine();
+                    if (!nyVærdi.isEmpty()) {
                         superheroDerSkalRedigeres.setName(nyVærdi);
                     }
                     System.out.println("Real name: " + superheroDerSkalRedigeres.getRealName());
                     nyVærdi = keyboard.nextLine();
-                    if (!nyVærdi.isEmpty()){
+                    if (!nyVærdi.isEmpty()) {
                         superheroDerSkalRedigeres.setRealName(nyVærdi);
                     }
                     System.out.println("Super power: " + superheroDerSkalRedigeres.getSuperPower());
                     nyVærdi = keyboard.nextLine();
-                    if (!nyVærdi.isEmpty()){
+                    if (!nyVærdi.isEmpty()) {
                         superheroDerSkalRedigeres.setSuperPower(nyVærdi);
                     }
                     System.out.println("Year created: " + superheroDerSkalRedigeres.getYearCreated());
                     nyVærdi = keyboard.nextLine();
-                    if(!nyVærdi.isEmpty()){
+                    if (!nyVærdi.isEmpty()) {
                         superheroDerSkalRedigeres.setYearCreated(Integer.parseInt(nyVærdi));
                     }
                     System.out.println("Is Human: " + superheroDerSkalRedigeres.getIsHuman());
-                    nyVærdi=keyboard.nextLine();
-                    if (!nyVærdi.isEmpty()){
+                    nyVærdi = keyboard.nextLine();
+                    if (!nyVærdi.isEmpty()) {
                         superheroDerSkalRedigeres.setIsHuman(nyVærdi);
                     }
                     System.out.println("Strenght: " + superheroDerSkalRedigeres.getStrenght());
                     nyVærdi = keyboard.nextLine();
-                    if (!nyVærdi.isEmpty()){
+                    if (!nyVærdi.isEmpty()) {
                         superheroDerSkalRedigeres.setStrenght(nyVærdi);
                     }
-                    System.out.println(superheroDerSkalRedigeres + " is updated");
+                    System.out.println(superheroDerSkalRedigeres + "is updated");
                 }
 
             }
