@@ -127,7 +127,20 @@ public class UserInterface {
                         superheroDerSkalRedigeres.setSuperPower(nyVærdi);
                     }
                     System.out.println("Year created: " + superheroDerSkalRedigeres.getYearCreated());
-                    while (!keyboard.hasNextInt()) {
+                    do {
+                        nyVærdi = keyboard.nextLine();
+                        if (nyVærdi.isEmpty()) {
+                            break;
+                        } else {
+                            try {
+                                superheroDerSkalRedigeres.setYearCreated(Integer.parseInt(nyVærdi));
+                                break;
+                            } catch (NumberFormatException e) {
+                                System.out.println("Its not a valid number, try again");
+                            }
+                        }
+                    } while (true);
+                    /*while (!keyboard.hasNextInt()) {
                         keyboard.nextLine();
                         System.out.println("Its not a valid number, try again");
                         System.out.println("Year created: " + superheroDerSkalRedigeres.getYearCreated());
@@ -135,9 +148,9 @@ public class UserInterface {
                     nyVærdi = keyboard.next();
                     if (!nyVærdi.isEmpty()) {
                         superheroDerSkalRedigeres.setYearCreated(Integer.parseInt(nyVærdi));
-                    }
+                    } */
 
-                    keyboard.nextLine();
+                    //keyboard.nextLine();
                     System.out.println("Is Human: " + superheroDerSkalRedigeres.getIsHuman());
                     nyVærdi = keyboard.nextLine();
                     if (!nyVærdi.isEmpty()) {
